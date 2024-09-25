@@ -7,7 +7,7 @@ int main()
     float surf; // C'est la surface S
 
     printf("Donner la largeur : \n");
-    scanf("%f",&La);
+    scanf("%f",&la);
     printf("Donner le longueur : \n");
     scanf("%f",&LO);
     surf=LO*la;
