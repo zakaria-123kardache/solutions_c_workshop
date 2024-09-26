@@ -2,15 +2,15 @@
 #include <math.h>
 
 int main() {
-    int n, lasomme = 0;
+    int i, n, lasomme = 0;
     printf("Entre un nmbr: ");
     scanf("%d", &n);
 
-    for (int i = 1; i <= n; i++) {
-        lasomme += i;
+    for (i = 1; i <= n; i++) {
+         lasomme = lasomme + i;
     }
 
-    printf("La somme des %d premiers nombres = %d\n", n, lasomme);
+    printf(" %d\n",lasomme);
 
     return 0;
 }
