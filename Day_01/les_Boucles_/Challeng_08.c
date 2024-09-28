@@ -5,6 +5,9 @@ int main() {
     
     printf("ennter a number (n ∈ N): ");
     scanf("%d", &n);
+
+
+    
     
     for(i = 2; i <= n; i++) {
         F = F1 + F2;
