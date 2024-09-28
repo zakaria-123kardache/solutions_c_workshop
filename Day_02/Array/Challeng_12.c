@@ -19,10 +19,10 @@ int main()
 
      for(i=0;i<n;i++){
 
-        if(T[i]%2!=0){
+        if(T[i]%2 == 0){
             printf("les valeur %d : \n",T[i]);
         }
-     }
+     
 
  
 }
