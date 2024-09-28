@@ -3,35 +3,27 @@
 
 int main() {
 
-    int n ; 
-    int T[n] ,i; 
-    int max ; 
+    int n;
+    int T[20];
+    int max;
+    int i;
 
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
 
-   printf("affichage esst : %d", n);
-   scanf("%d",&n); 
-
-
-
-   for ( i ; i < n ; i ++ ){
-    
-   printf("affichage esst : %d",i ++);
-   scanf("%d",T[i]); 
-
- }
-    
-
-   printf("le max esst  : "); 
-
-   for ( i ; i < n ; i ++ ){
-
-    if ( T[i] > max ){
-
-        max == T[i];
+    for (i = 0; i < n; i++) {
+        printf("T[%d] = ", i + 1);
+        scanf("%d", &T[i]);
     }
-   printf("affichage esst : %d", max);
-   
 
- }
+    max = T[0];
 
+    for ( i = 0; i < n; i++) {
+        if (T[i] < max) {
+            max = T[i];
+        }
+    }
+
+    printf("le  max esst : %d", max);
+    return 0;
 }
