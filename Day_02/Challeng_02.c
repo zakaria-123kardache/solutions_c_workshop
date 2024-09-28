@@ -8,7 +8,7 @@ int main() {
 
 
    printf("affichage esst : %d", n);
-   scanf("%d",n); 
+   scanf("%d",&n); 
 
 
 
