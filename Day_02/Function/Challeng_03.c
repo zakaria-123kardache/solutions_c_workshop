@@ -2,9 +2,9 @@
 
 int zakaria(int x , int y) {
     if (x > y) {
-        printf("%d", x);
+        return x;
     } else {
-        printf("%d", y);
+        return y; 
     }
 }
 
