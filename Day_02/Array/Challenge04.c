@@ -19,11 +19,11 @@ int main() {
     max = T[0];
 
     for ( i = 0; i < n; i++) {
-        if (T[i] < max) {
+        if (T[i] > max) {
             max = T[i];
         }
     }
-
+    
     printf("le  max esst : %d", max);
     return 0;
 }
