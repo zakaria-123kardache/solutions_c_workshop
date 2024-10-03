@@ -17,10 +17,7 @@ int main() {
    scanf("%d",T[i]); 
 
  }
-   printf("lafichage des elemnt estt : "); 
-
-   for ( i ; i < n ; i ++ ){
-   printf("affichage esst : %d",T[i]);
-   
+    
+   return 0 ; 
 
  }

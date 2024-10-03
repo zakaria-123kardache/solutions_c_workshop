@@ -4,8 +4,6 @@
 int main() {
 
     int n ; 
-    int T[n] ,i; 
-    int lasomme ; 
 
 
    printf("affichage esst : %d", n);
@@ -13,9 +11,11 @@ int main() {
 
 
 
+   int T[n] ,i; 
+   int lasomme ; 
    for ( i ; i < n ; i ++ ){
     
-   printf("affichage esst : %d",i ++);
+   printf("affichage esst : %d",i + 1);
    scanf("%d",T[i]); 
 
  }
