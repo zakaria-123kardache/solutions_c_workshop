@@ -2,26 +2,22 @@
 #include <stdio.h>
 #include <string.h>
 
-typedef struct
-{
-    char nomcomplete[50];
-    char telefone[50];
+//declaration
+typedef struct {
+    char nom[50];
+    char prenom[50];
+    char telephone[50];
     char email[50];
-    char adresse[50];
-    char CNI[10];
     int age;
-} patient;
-
-typedef struct
-{
     char status[30];
-    char ID[10];
-} reservation;
-
-typedef struct
-{
+    int ID;
     int date;
-} date;
+} Reservation;
+
+Reservation reservations[100];
+int count = 0;
+int currentID = 1;
+//end declaration
 
 void identifiant(char ID[])
 {
