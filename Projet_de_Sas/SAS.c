@@ -16,9 +16,33 @@ typedef struct
 } Reservation;
 
 Reservation reservations[100];
-int count = 0;
-int id = 1;
+int count = 0; 
+int id = 1; 
 // end declaration
+
+int ajouterPredefinies()
+{
+    Reservation predefinies[] = {
+        {"Dupont", "Jean", "0612345678", "jean.dupont@mail.com", 25, "valide", id++, "12-01-2024"},
+        {"Martin", "Lucie", "0712345678", "lucie.martin@mail.com", 30, "reporte", id++, "22-03-2024"},
+        {"Durand", "Pierre", "0611223344", "pierre.durand@mail.com", 40, "valide", id++, "05-04-2024"},
+        {"Bernard", "Sophie", "0711223344", "sophie.bernard@mail.com", 20, "annule", id++, "16-05-2024"},
+        {"Moreau", "Alice", "0622334455", "alice.moreau@mail.com", 35, "traite", id++, "19-06-2024"},
+        {"Lefevre", "Marc", "0722334455", "marc.lefevre@mail.com", 22, "valide", id++, "25-07-2024"},
+        {"Petit", "Marie", "0612341234", "marie.petit@mail.com", 28, "reporte", id++, "02-08-2024"},
+        {"Simon", "Julie", "0712341234", "julie.simon@mail.com", 18, "annule", id++, "11-09-2024"},
+        {"Rousseau", "Paul", "0622112233", "paul.rousseau@mail.com", 32, "traite", id++, "15-10-2024"},
+        {"Girard", "Emilie", "0722112233", "emilie.girard@mail.com", 27, "valide", id++, "21-11-2024"},
+        {"Blanc", "Alex", "0611221133", "alex.blanc@mail.com", 29, "reporte", id++, "30-12-2024"}};
+
+    for (int i = 0; i < 11; i++)
+    {
+        reservations[count++] = predefinies[i];
+    }
+
+    printf("11 reservations predefinies ajoutees avec succes!\n");
+    return 0;
+}
 
 int ajouter()
 {
@@ -147,11 +171,12 @@ int modifier()
             scanf("%11s", &reservations[i].date);
 
             printf("Modification reussie!\n");
-            return;
+            return 0;
         }
     }
 
     printf("Reservation non trouvee!\n");
+    return -1;
 }
 
 int supprimer()
@@ -172,14 +197,15 @@ int supprimer()
             }
             count--; // minimiser le nombre de reservations
             printf("Reservation avec ID %d supprimee avec succes!\n", idRecherche);
-            return;
+            return 0;
         }
     }
 
     printf("Reservation non trouvee!\n");
+    return -1;
 }
 
-void afficher()
+int afficher()
 {
     int choix;
     printf("Choisissez l'option d'affichage:\n");
@@ -230,7 +256,7 @@ void afficher()
                 printf("Age: %d\n", reservations[i].age);
                 printf("Statut: %s\n", reservations[i].status);
                 printf("Date: %s\n", reservations[i].date);
-                return;
+                return 0;
             }
         }
 
@@ -247,7 +273,7 @@ int statistique()
     if (count == 0)
     {
         printf("Aucune reservation disponible pour les statistiques.\n");
-        return;
+        return -1;
     }
 
     int totalAge = 0;
@@ -302,9 +328,10 @@ int statistique()
     printf("Annule: %d\n", statusCount[1]);
     printf("Reporte: %d\n", statusCount[2]);
     printf("Traite: %d\n", statusCount[3]);
+    return 0;
 }
 
-void tri()
+int tri()
 {
     int choix;
     printf("Choisissez l'option de tri:\n");
@@ -332,7 +359,6 @@ void tri()
                         reservations[j] = reservations[j + 1];
                         reservations[j + 1] = temp;
                     }
-                    return;
                 }
             }
             printf("Reservations triees avec succes par nom!\n");
@@ -358,7 +384,6 @@ void tri()
                         reservations[j] = reservations[j + 1];
                         reservations[j + 1] = temp;
                     }
-                    return;
                 }
             }
             printf("Reservations triees avec succes par statut!\n");
@@ -368,11 +393,16 @@ void tri()
     {
         printf("Choix invalide. Veuillez reessayer.\n");
     }
+
+    return 0;
 }
 
 int main()
 {
     int choix;
+
+    ajouterPredefinies();
+
     do
     {
         printf("====================== Menu =========================\n");
@@ -412,7 +442,7 @@ int main()
         default:
             printf("Choix non correct. Veuillez reessayer.\n");
         }
-    } while (choix != 6);
+    } while (choix != 7);
 
     return 0;
 }
